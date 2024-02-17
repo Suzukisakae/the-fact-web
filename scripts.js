@@ -50,7 +50,27 @@ const factlist = document.querySelector(".facts-list");
 
 // Create DOM element: Render facts in list
 factlist.innerHTML = "";
-createFactsList(initialFacts);
+
+// Load data from Superbase
+loadFacts();
+async function loadFacts() {
+  const res = await fetch(
+    "https://pptkrzkcraedhswrywqs.supabase.co/rest/v1/facts",
+    {
+      headers: {
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBwdGtyemtjcmFlZGhzd3J5d3FzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDgxNjMzNzAsImV4cCI6MjAyMzczOTM3MH0.yEvg27vWTyHhRDj9BygJHEfbKA9DtFGVl-859s-Jcm4",
+        authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBwdGtyemtjcmFlZGhzd3J5d3FzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDgxNjMzNzAsImV4cCI6MjAyMzczOTM3MH0.yEvg27vWTyHhRDj9BygJHEfbKA9DtFGVl-859s-Jcm4",
+      },
+    }
+  );
+  const data = await res.json();
+  console.log(data);
+  createFactsList(data);
+}
+
+
 function createFactsList(dataArray) {
   const htmlArr = dataArray.map(
     (fact) => `<li class="fact">
