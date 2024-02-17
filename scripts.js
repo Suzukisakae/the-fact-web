@@ -66,10 +66,9 @@ async function loadFacts() {
     }
   );
   const data = await res.json();
-  console.log(data);
+  // const fillteredData = data.filter((fact)=> fact.category === "technology");
   createFactsList(data);
 }
-
 
 function createFactsList(dataArray) {
   const htmlArr = dataArray.map(
@@ -83,10 +82,12 @@ function createFactsList(dataArray) {
       >(Source)</a
     >
   </p>
-  <span class="tag" style="background-color: #3b82f6"
+  <span class="tag" style="background-color: ${
+    CATEGORIES.find((cat) => cat.name === fact.category).color
+  }"
     >${fact.category}</span
   >
-                </li>`
+  </li>`
   );
   console.log(htmlArr);
   factlist.insertAdjacentHTML("afterbegin", htmlArr.join(""));
