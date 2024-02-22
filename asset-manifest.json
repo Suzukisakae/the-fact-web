@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/the-fact-web/static/css/main.d9683d90.css",
+    "main.js": "/the-fact-web/static/js/main.c14aa4a9.js",
+    "static/js/952.bd7795db.chunk.js": "/the-fact-web/static/js/952.bd7795db.chunk.js",
+    "index.html": "/the-fact-web/index.html",
+    "main.d9683d90.css.map": "/the-fact-web/static/css/main.d9683d90.css.map",
+    "main.c14aa4a9.js.map": "/the-fact-web/static/js/main.c14aa4a9.js.map",
+    "952.bd7795db.chunk.js.map": "/the-fact-web/static/js/952.bd7795db.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d9683d90.css",
+    "static/js/main.c14aa4a9.js"
+  ]
+}
